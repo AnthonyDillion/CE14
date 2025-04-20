@@ -30,18 +30,27 @@ img {
 header {
    display: flex;
    justify-content: space-between;
+   flex-direction: column;
+   background-color: #E20013;
 }
 
 header nav ul {
    display: flex;
    justify-content: space-around;
    list-style-type: none;
-   
+   margin-bottom: 1rem;
 }
 
+header img {
+   scale: 30%;
+   margin-top: -3.5rem;
+   margin-bottom: -80px;
+}
 
 header nav a {
-
+   text-decoration: none;
+   color: white;
+   padding: 1em;
 }
 
 header nav a:hover {
@@ -53,12 +62,29 @@ header nav a:hover {
 /* Hero Image
 ------------------------------------------ */
 section.hero-image {
-
+background-color: #3D6BD5;
+border: 2px solid #A5A5A5;
 }
 
 section.hero-image img {
-
+   animation-name: slide-in;
+   animation-duration: 3s;
+   animation-delay: .5s;
+   animation-timing-function: ease-out;
+   animation-fill-mode: backwards;
 }
+
+@keyframes slide-in {
+   0% {
+      transform: translateX(-70px);
+      opacity: 0;
+   }
+
+   50% {
+      opacity: 1;
+   }
+}
+
 
 
 
@@ -67,47 +93,78 @@ section.hero-image img {
 /* Game Name & Price
 ------------------------------------------ */
 /* ⬇ Container for name, price, and buy buttons */
-section.game {
-
+.game {
+   /* display: grid;
+   justify-content: center;
+   align-items: center; */
 }
 
 /* ⬇ Both the h1 and h2 */
 section.game-title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-}
+} 
 
 /* ⬇ Untitled Goose Game */
-section.game-title h1 {
-
+.game h1 {
+   scale: 200%;
+   margin-top: 1rem;
+   margin-bottom: .25rem;
+   align-items: center;
+   text-align: center;
 }
 
 /* ⬇ Available Now */
-section.game-title h2 {
-
+.game h2 {
+   color: #A5A5A5;
+   text-align: center;
+   margin-bottom: .5rem;
 }
 
 /* ⬇ Price of the game */
 p.price {
-   
+   font-size: 150%;
+   margin-right: 1rem;
+   margin-bottom: 0;
+   align-items: center;
+   text-align: center;
 }
 
 /* ⬇ Container for buy buttons */
 div.buy {
-
+   margin-bottom: .75rem;
 }
 
 /* ⬇ List with buy buttons */
 div.buy li {
+   list-style-type: none;
+}
 
+div.options ul {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
 }
 
 /* ⬇ Buy Digital & Buy Physical links */
 div.buy a {
-
+   background-color: #E20013;
+   border: 2px solid #A5A5A5;
+   padding: 1rem;
+   font-size: 75%;
+   display: block;
+   border-radius: 1rem;
+   color: white;
+   text-decoration: none;
+   margin: .5rem;
+   transition: all 1s ease;
 }
 
 div.buy a:hover {
-
+   transform: scale(1.15);
+   box-shadow: 0 10px 10px -10px black;
 }
 
 
@@ -117,17 +174,23 @@ div.buy a:hover {
 ------------------------------------------ */
 /* ⬇ Container area for screen shots */
 section.screen-shots {
-
+   background-color: #3D6BD5;
+   padding: 1rem;
+   grid-gap: 1rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr ;
 }
 
 /* ⬇ Selects an individual image */
-section.screen-shots img:nth-child() {
-
+section.screen-shots img:nth-child(3) {
+   grid-column: 1/3;
+   grid-row: 1/3;
 }
 
 /* ⬇ Affects all screen shot images */
 section.screen-shots img {
-
+   border: 1px solid #A5A5A5;
 }
 
 
@@ -137,7 +200,11 @@ section.screen-shots img {
 ------------------------------------------ */
 /* ⬇ Contains DESCRIPTION, GOOSE-BADGE, and PLAY-MODES */
 main {
-
+   display: grid;
+   grid-template-rows: 1fr;
+   grid-template-columns: 1fr;
+   justify-content: space-around;
+   align-items: center;
 }
 
 
@@ -147,22 +214,26 @@ main {
 
 /* ⬇ Container for game description info */
 section.description {
-
+   padding: 1rem;
+   line-height: 1.5;
+   font-size: 125%;
+   grid-row: 2/3;
 }
 
 /* ⬇ It's a lovely day in the village */
 section.description h2 {
-
+   font-weight: bolder;
+   padding-bottom: 1em;
 }
 
 /* ⬇ Featuring */
 section.description h3 {
-
+   font-weight: bolder;
 }
 
 /* ⬇ List of features */
 section.description li {
-
+   margin-inline-start: 2rem;
 }
 
 
@@ -172,7 +243,10 @@ section.description li {
 ------------------------------------------ */
 /* ⬇ Goose in yellow badge */
 img.goose-badge {
-
+   align-items: center;
+   padding-left: 6rem;
+   grid-row: 3/4;
+   grid-column: 1/2;
 }
 
 
@@ -182,16 +256,31 @@ img.goose-badge {
 ------------------------------------------ */
 /* ⬇ Container for play modes area */
 section.play-modes {
-
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 3fr;
+   border: 3px solid #A5A5A5;
+   padding: 1em;
+   border-radius: 1em;
+   background-color: #e9e9e9;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   padding: 1rem;
+   margin: .5em;
 }
 
 /* ⬇ Play Modes title */
 section.play-modes h2 {
-
+   scale: 155%;
+   text-align: center;
+   align-items: center;
+   grid-column: 1/4;
 }
 
 /* ⬇ Play mode icon images */
 section.play-modes img {
+  
 
 }
 
@@ -200,5 +289,8 @@ section.play-modes img {
 /* Footer
 ------------------------------------------ */
 footer {
-
+   background-color: #3D6BD5;
+   text-align: center;
+   padding: 1em;
+   color: white;
 }
